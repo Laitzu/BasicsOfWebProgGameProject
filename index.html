@@ -1,0 +1,25 @@
+<html>
+<head>
+    <script type="module" src="game.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>Destroy enemy tanks and collect dropped powerups by touching them (colored circles) 
+    <br>Arrow keys to move (Up to jump), left mouse to shoot
+    <br>
+    <br>Don't forget to enter your playername here! (Maximum 3 characters)
+</header>
+<input class="input" type="text" id="username" placeholder="Enter playername here" maxlength="3">
+<button class="input" id="submit-data" onclick="savePlayerName()">Save playername</button>
+
+</body>
+</html>
+
+<script>
+    function savePlayerName() {
+        let username = document.getElementById("username").value
+        username = username.toUpperCase();
+        localStorage.setItem("playerName", username)
+    }
+</script>
